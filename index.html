@@ -1,0 +1,78 @@
+const db = globalThis.__B44_DB__ || { auth:{ isAuthenticated: async()=>false, me: async()=>null }, entities:new Proxy({}, { get:()=>({ filter:async()=>[], get:async()=>null, create:async()=>({}), update:async()=>({}), delete:async()=>({}) }) }), integrations:{ Core:{ UploadFile:async()=>({ file_url:'' }) } } };
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FLAME &amp; FORK — Big Flavor. Fresh Every Day.</title>
+    <meta name="description" content="FLAME & FORK is a modern American kitchen serving smash burgers, stone-baked pizza, crispy fried chicken and grilled plates. Dine in, pick up or order delivery." />
+    <meta name="theme-color" content="#FFFFFF" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="canonical" href="https://flameandfork.example.com/" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23E96B35'/%3E%3Cpath d='M16 6c3.6 4.4 5.4 6.4 5.4 9.8A5.4 5.4 0 0 1 16 21.4a5.4 5.4 0 0 1-5.4-5.6c0-1.8.9-2.7 1.8-4.5.9 1.8 1.8 2.7 2.7 2.7 0-2.7 0-5.4.9-8z' fill='%23FFFFFF'/%3E%3C/svg%3E" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="FLAME &amp; FORK" />
+    <meta property="og:title" content="FLAME &amp; FORK — Big Flavor. Fresh Every Day." />
+    <meta property="og:description" content="Smash burgers, stone-baked pizza, crispy fried chicken and grilled plates — cooked fresh, served warm." />
+    <meta property="og:image" content="https://media.db.com/images/public/6aed857cb5002fbffca98aec/f51e19259_generated_image.png" />
+    <meta property="og:url" content="https://flameandfork.example.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FLAME &amp; FORK — Big Flavor. Fresh Every Day." />
+    <meta name="twitter:description" content="A modern American kitchen serving smash burgers, pizza, fried chicken and grilled plates." />
+    <meta name="twitter:image" content="https://media.db.com/images/public/6aed857cb5002fbffca98aec/f51e19259_generated_image.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "FLAME & FORK",
+        "description": "Modern American kitchen serving smash burgers, stone-baked pizza, crispy fried chicken, sandwiches and grilled plates.",
+        "servesCuisine": ["American", "Burgers", "Pizza", "Fried Chicken", "Grilled"],
+        "priceRange": "Rs. 200 – Rs. 1,950",
+        "telephone": "+1-310-555-0128",
+        "url": "https://flameandfork.example.com/",
+        "image": "https://media.db.com/images/public/6aed857cb5002fbffca98aec/f51e19259_generated_image.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1200 Harbor View Avenue",
+          "addressLocality": "Santa Monica",
+          "addressRegion": "CA",
+          "postalCode": "90401",
+          "addressCountry": "US"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+            "opens": "11:30",
+            "closes": "22:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Friday", "Saturday"],
+            "opens": "11:30",
+            "closes": "23:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Sunday"],
+            "opens": "12:00",
+            "closes": "21:30"
+          }
+        ],
+        "acceptsReservations": "True",
+        "hasMenu": "https://flameandfork.example.com/menu"
+      }
+    </script>
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

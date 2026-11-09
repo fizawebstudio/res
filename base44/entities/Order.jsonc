@@ -1,0 +1,118 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "customer_name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "order_type": {
+      "type": "string",
+      "enum": [
+        "delivery",
+        "pickup"
+      ],
+      "enumColors": [
+        "blue",
+        "purple"
+      ],
+      "default": "delivery"
+    },
+    "address": {
+      "type": "string",
+      "description": "Delivery address, empty for pickup"
+    },
+    "items": {
+      "type": "array",
+      "description": "Line items captured from the cart",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "price": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "items_summary": {
+      "type": "string",
+      "description": "Readable one-line summary of the order"
+    },
+    "subtotal": {
+      "type": "number"
+    },
+    "delivery_fee": {
+      "type": "number"
+    },
+    "total": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "channel": {
+      "type": "string",
+      "enum": [
+        "website",
+        "whatsapp"
+      ],
+      "enumColors": [
+        "gray",
+        "green"
+      ],
+      "default": "website"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "new",
+        "confirmed",
+        "preparing",
+        "out_for_delivery",
+        "completed",
+        "cancelled"
+      ],
+      "enumColors": [
+        "yellow",
+        "blue",
+        "purple",
+        "pink",
+        "green",
+        "red"
+      ],
+      "default": "new"
+    }
+  },
+  "required": [
+    "customer_name",
+    "phone",
+    "items",
+    "total"
+  ],
+  "rls": {
+    "create": {},
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

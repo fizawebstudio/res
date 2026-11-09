@@ -1,0 +1,68 @@
+{
+  "name": "Offer",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Combo name"
+    },
+    "slug": {
+      "type": "string",
+      "description": "Stable identifier used for image matching"
+    },
+    "kicker": {
+      "type": "string",
+      "description": "Small line above the title, e.g. Feeds 4 \u2013 5"
+    },
+    "includes": {
+      "type": "string",
+      "description": "What the combo contains, one item per line"
+    },
+    "price": {
+      "type": "number",
+      "description": "Combo price in PKR"
+    },
+    "compare_at": {
+      "type": "number",
+      "description": "Regular price for the strike-through"
+    },
+    "tag": {
+      "type": "string",
+      "description": "Short badge, e.g. Save 20%"
+    },
+    "image_url": {
+      "type": "string",
+      "description": "Optional image URL; falls back to the bundled photo"
+    },
+    "sort_order": {
+      "type": "number"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Uncheck to hide from the website"
+    }
+  },
+  "required": [
+    "title",
+    "price"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}
